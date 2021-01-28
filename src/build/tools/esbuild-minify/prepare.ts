@@ -2,13 +2,13 @@ import esbuild from "esbuild";
 import { printEsbuildWarn } from "../../../util/esbuild-warn.js";
 import { writeFile } from "../../../util/fs.js";
 
-import * as esbuildOptions from "./config.js";
+import type { Config } from "./config";
 import { create as createOptions } from "./options.js";
 
 /**
  * Prepare minifying functions.
  */
-export const prepare = (config?: esbuildOptions.Config) => {
+export const prepare = (config?: Config) => {
   const bannerMin = config?.bannerMin;
   const options = createOptions(config);
 

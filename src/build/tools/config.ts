@@ -1,5 +1,5 @@
-import * as typescript from "./typescript/index.js";
-import * as rollup from "./rollup/index.js";
-import * as esbuildMinify from "./esbuild-minify/index.js";
+import type { Config as TsConfig } from "./typescript/index.js";
+import type { Config as RollupConfig } from "./rollup/index.js";
+import type { Config as EsbuildMinifyConfig } from "./esbuild-minify/index.js";
 
-export type Config = typescript.Config & rollup.Config & esbuildMinify.Config;
+export type Config = TsConfig & RollupConfig & EsbuildMinifyConfig;

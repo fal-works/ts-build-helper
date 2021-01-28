@@ -2,7 +2,7 @@ import * as rollup from "rollup";
 
 import type { Config } from "./config";
 
-export const createInputOptions = (config?: Config) => (
+export const createInput = (config?: Config) => (
   input: rollup.InputOptions["input"]
 ): rollup.InputOptions => ({
   input,
@@ -10,7 +10,7 @@ export const createInputOptions = (config?: Config) => (
   ...config?.overrides?.rollupInput,
 });
 
-export const createOutputOptions = (config?: Config): rollup.OutputOptions => ({
+export const createOutput = (config?: Config): rollup.OutputOptions => ({
   format: "iife",
   banner: config?.banner,
   globals: config?.globals,
