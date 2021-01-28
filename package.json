@@ -37,7 +37,8 @@
     "rimraf": "^3.0.2"
   },
   "scripts": {
-    "build": "rimraf lib/ && tsc && npm run format:lib",
+    "prebuild": "rimraf lib",
+    "build": "tsc && npm run format:lib",
     "preformat:lib": "eslint --fix --no-ignore lib/**/*.js",
     "format:lib": "prettier --write lib/**/*.js"
   }
