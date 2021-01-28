@@ -1,5 +1,5 @@
-import * as options from "./options/index.js";
+import * as typescript from "./typescript/index.js";
+import * as rollup from "./rollup/index.js";
+import * as esbuildMinify from "./esbuild-minify/index.js";
 
-export type Config = options.typescript.Config &
-  options.esbuild.Config &
-  options.rollup.Config;
+export type Config = typescript.Config & rollup.Config & esbuildMinify.Config;

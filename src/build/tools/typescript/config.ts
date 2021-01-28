@@ -5,8 +5,3 @@ export type Config = {
     typescript?: ts.Options;
   };
 };
-
-export const transpile = (config: Config): Partial<ts.Options> => ({
-  clean: true,
-  ...config.overrides?.typescript,
-});
