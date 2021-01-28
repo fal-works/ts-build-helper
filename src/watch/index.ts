@@ -9,10 +9,12 @@ import type { Config } from "./tools";
 export type { Paths, Config };
 
 /**
+ * Start watching files for incremental build.
+ *
  * - Watch with chokidar
  * - Bundle and minify with esbuild
  */
-export const watch = async (
+export const run = async (
   paths: Paths,
   config?: Config,
   watchOptions?: chokidarIncremental.Options<BuildIncremental>

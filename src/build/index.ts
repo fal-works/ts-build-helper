@@ -8,12 +8,14 @@ import type { Config } from "./tools";
 export type { Paths, Config };
 
 /**
+ * Build scripts for distribution.
+ *
  * - Transpile with TypeScript
  * - Bundle with Rollup
  * - Minify with esbuild
  * - Format with Prettier
  */
-export const build = async (paths: Paths, config: Config): Promise<void> => {
+export const run = async (paths: Paths, config: Config): Promise<void> => {
   const requiredPaths = preparePaths(paths);
   const { dirs, files } = requiredPaths;
   const { transpile, bundle, minifyWrite, formatWrite } = prepareTools(config);
