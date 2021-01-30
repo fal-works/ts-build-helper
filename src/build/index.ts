@@ -1,11 +1,9 @@
-import { preparePaths } from "./paths.js";
+import { Paths, RequiredPaths, prepare as preparePaths } from "../paths.js";
 import { prepare as prepareTools } from "./tools/index.js";
-export { preparePaths, prepareTools };
-
-import type { Paths } from "./paths";
 import type { Config } from "./tools";
 
-export type { Paths, Config };
+export { prepareTools };
+export type { Config };
 
 /**
  * Build scripts for distribution.
@@ -15,8 +13,11 @@ export type { Paths, Config };
  * - Minify with esbuild
  * - Format with Prettier
  */
-export const run = async (paths: Paths, config: Config): Promise<void> => {
-  const requiredPaths = preparePaths(paths);
+export const run = async (
+  paths: Paths | RequiredPaths,
+  config: Config
+): Promise<void> => {
+  const requiredPaths = "files" in paths ? paths : preparePaths(paths);
   const { dirs, files } = requiredPaths;
   const { transpile, bundle, minifyWrite, formatWrite } = prepareTools(config);
 

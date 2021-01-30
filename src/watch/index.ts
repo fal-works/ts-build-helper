@@ -1,13 +1,12 @@
 import type { BuildIncremental } from "esbuild";
 import * as chokidarIncremental from "@fal-works/chokidar-incremental";
 
-import { preparePaths } from "./paths.js";
+import { Paths, RequiredPaths, prepare as preparePaths } from "../paths.js";
 import { prepare as prepareTools } from "./tools/prepare.js";
-export { preparePaths, prepareTools };
-
-import type { Paths } from "./paths";
 import type { Config } from "./tools";
-export type { Paths, Config };
+
+export { prepareTools };
+export type { Config };
 
 /**
  * Start watching files for incremental build.
@@ -16,11 +15,11 @@ export type { Paths, Config };
  * - Bundle and minify with esbuild
  */
 export const run = async (
-  paths: Paths,
+  paths: Paths | RequiredPaths,
   config?: Config,
   watchOptions?: chokidarIncremental.Options<BuildIncremental>
 ): Promise<void> => {
-  const { dirs, files } = preparePaths(paths);
+  const { dirs, files } = "files" in paths ? paths : preparePaths(paths);
   const { bundle, minify } = prepareTools(config);
 
   const onStart = async () => {

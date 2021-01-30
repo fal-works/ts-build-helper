@@ -1,7 +1,7 @@
 {
   "name": "@fal-works/ts-build-helper",
   "description": "Helps build TypeScript projects.",
-  "version": "0.1.1",
+  "version": "0.2.0-alpha",
   "license": "MIT",
   "author": "FAL",
   "keywords": [
