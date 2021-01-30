@@ -1,6 +1,6 @@
 import { preparePaths } from "./paths.js";
 import { prepare as prepareTools } from "./tools/index.js";
-export { prepareTools };
+export { preparePaths, prepareTools };
 
 import type { Paths } from "./paths";
 import type { Config } from "./tools";

@@ -3,6 +3,7 @@ import * as chokidarIncremental from "@fal-works/chokidar-incremental";
 
 import { preparePaths } from "./paths.js";
 import { prepare as prepareTools } from "./tools/prepare.js";
+export { preparePaths, prepareTools };
 
 import type { Paths } from "./paths";
 import type { Config } from "./tools";
