@@ -15,17 +15,35 @@
   },
 
   "overrides": [
-    // config with basic rules
+    // config for all *.js and *.d.ts
     {
-      "files": ["src/**/*.ts"],
-      "extends": ["eslint:recommended", "prettier"]
+      "files": ["**/*.js", "**/*.d.ts"],
+      "rules": {
+        "lines-around-comment": [
+          "error",
+          {
+            "beforeBlockComment": true,
+            "beforeLineComment": true,
+            "allowBlockStart": true,
+            "allowObjectStart": true,
+            "allowArrayStart": true,
+            "allowClassStart": true
+          }
+        ]
+      }
     },
 
-    // config for TypeScript
+    // config for all *.ts
     {
       "files": ["**/*.ts"],
       "plugins": ["@typescript-eslint"],
       "parser": "@typescript-eslint/parser"
+    },
+
+    // config with basic rules
+    {
+      "files": ["src/**/*.ts"],
+      "extends": ["eslint:recommended", "prettier"]
     },
 
     // config for source code in TypeScript
@@ -41,24 +59,6 @@
         "no-fallthrough": "off", // already checked by TypeScript
         "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off"
-      }
-    },
-
-    // config just for pre-formatting purpose
-    {
-      "files": ["**/*.js", "lib/**/*.ts"],
-      "rules": {
-        "lines-around-comment": [
-          "error",
-          {
-            "beforeBlockComment": true,
-            "beforeLineComment": true,
-            "allowBlockStart": true,
-            "allowObjectStart": true,
-            "allowArrayStart": true,
-            "allowClassStart": true
-          }
-        ]
       }
     }
   ]
