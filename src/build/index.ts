@@ -3,6 +3,7 @@ import { prepare as prepareTools } from "./tools/index.js";
 import type { Config } from "./tools";
 
 export { prepareTools };
+export { typescript, rollup, prettier, esbuildMinify } from "./tools/index.js";
 export type { Config };
 
 /**

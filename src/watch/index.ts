@@ -6,6 +6,7 @@ import { prepare as prepareTools } from "./tools/prepare.js";
 import type { Config } from "./tools";
 
 export { prepareTools };
+export { esbuildBundle, esbuildMinify } from "./tools/index.js";
 export type { Config };
 
 /**
