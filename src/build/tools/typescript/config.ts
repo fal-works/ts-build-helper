@@ -1,4 +1,4 @@
-import * as ts from "@fal-works/ts-transpile-modules";
+import type * as ts from "@fal-works/ts-transpile-modules";
 
 export type Config = {
   overrides?: {

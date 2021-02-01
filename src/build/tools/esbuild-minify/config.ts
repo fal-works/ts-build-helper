@@ -1,4 +1,4 @@
-import esbuild from "esbuild";
+import type esbuild from "esbuild";
 
 export type Config = {
   bannerMin?: string;

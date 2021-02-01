@@ -1,4 +1,4 @@
-import esbuild from "esbuild";
+import type esbuild from "esbuild";
 
 const warn = (message: unknown) => console.warn(message);
 

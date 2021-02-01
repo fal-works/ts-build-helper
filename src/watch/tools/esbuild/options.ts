@@ -1,4 +1,4 @@
-import esbuild from "esbuild";
+import type esbuild from "esbuild";
 import { globalExternals } from "@fal-works/esbuild-plugin-global-externals";
 
 import type { Config } from "./config";

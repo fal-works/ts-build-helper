@@ -1,4 +1,4 @@
-import * as rollup from "rollup";
+import type * as rollup from "rollup";
 
 export type Config = {
   external?: string[];
